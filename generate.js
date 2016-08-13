@@ -4,7 +4,7 @@ security_group_counter = 0
 
 config.ports.forEach (function (portValue) {
 	config.list.forEach (function (value, index, array) {
-		if (index % 50 == 0) {
+		if (index % config.max_security_size == 0) {
 			this_security_group_name = config.security_group_name + " " + ++security_group_counter
 			console.log ("  - name: " + this_security_group_name)
 			console.log ("    ec2_group:")
