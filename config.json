@@ -3,7 +3,7 @@
  "security_group_name": "My security group",
  "vpc_id": "\"{{ vpc_id }}\"",
  "vpc_region": "\"{{ vpc_region }}\"",
- "protocols": [
+ "ports": [
   "80",
   "443"
  ],

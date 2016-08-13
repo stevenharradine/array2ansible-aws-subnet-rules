@@ -2,7 +2,7 @@ config = require ("./config")
 
 security_group_counter = 0
 
-config.protocols.forEach (function (protocolValue) {
+config.ports.forEach (function (portValue) {
 	config.list.forEach (function (value, index, array) {
 		if (index % 50 == 0) {
 			this_security_group_name = config.security_group_name + " " + ++security_group_counter
@@ -15,8 +15,8 @@ config.protocols.forEach (function (protocolValue) {
 			console.log ("      rules:")
 		}
 		console.log ("        - proto: tcp")
-		console.log ("          from_port: " + protocolValue)
-		console.log ("          to_port: " + protocolValue)
+		console.log ("          from_port: " + portValue)
+		console.log ("          to_port: " + portValue)
 		console.log ("          cidr_ip: " + value + (value.indexOf ("/") < 0 === true ? "/32" : ""))
 	})
 })
