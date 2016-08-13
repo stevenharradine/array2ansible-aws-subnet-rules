@@ -1,0 +1,13 @@
+{
+ "max_security_size": "49",
+ "security_group_name": "My security group",
+ "vpc_id": "\"{{ vpc_id }}\"",
+ "vpc_region": "\"{{ vpc_region }}\"",
+ "protocols": [
+  "80",
+  "443"
+ ],
+ "list": [
+  "0.0.0.0"
+ ]
+}
