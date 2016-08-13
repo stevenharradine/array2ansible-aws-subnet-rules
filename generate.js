@@ -6,7 +6,7 @@ cidr_port = []
 config.ports.forEach (function (port) {
   config.list.forEach (function (cidr) {
     cidr_port.push ({
-      "cidr": cidr,
+      "cidr": cidr.indexOf ("/") < 0 === true ? "/32" : "",
       "port": port
     })
   })
@@ -29,5 +29,5 @@ cidr_port.forEach (function (value, index, array) {
   console.log ("        - proto: tcp")
   console.log ("          from_port: " + port)
   console.log ("          to_port: " + port)
-  console.log ("          cidr_ip: " + cidr + (cidr.indexOf ("/") < 0 === true ? "/32" : ""))
+  console.log ("          cidr_ip: " + cidr)
 })
