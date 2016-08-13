@@ -3,11 +3,11 @@ config = require ("./config")
 security_group_counter = 0
 cidr_port = []
 
-config.ports.forEach (function (portValue) {
-	config.list.forEach (function (value, index, array) {
+config.ports.forEach (function (port) {
+	config.list.forEach (function (cidr) {
 		cidr_port.push ({
-			"cidr": value,
-			"port":  portValue
+			"cidr": cidr,
+			"port": port
 		})
 	})
 })
