@@ -6,7 +6,7 @@ cidr_port = []
 config.ports.forEach (function (port) {
   config.list.forEach (function (cidr) {
     cidr_port.push ({
-      "cidr": cidr.indexOf ("/") < 0 === true ? "/32" : "",
+      "cidr": cidr + (cidr.indexOf ("/") < 0 === true ? "/32" : ""),
       "port": port
     })
   })
